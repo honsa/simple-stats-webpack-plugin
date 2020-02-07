@@ -15,6 +15,11 @@
     "warnings",
     "errors"
   ],
-  "author": "Jan Straka",
-  "license": "MIT"
+  "author": {
+    "name": "Jan Straka",
+    "email": "straka@8038.ch",
+    "url": "https://honsa.ch"
+  },
+  "license": "MIT",
+  "repository": "https://github.com/honsa/simple-stats-webpack-plugin"
 }
