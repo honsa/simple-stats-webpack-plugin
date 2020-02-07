@@ -29,7 +29,7 @@ const SimpleStats = require('simple-stats-webpack-plugin');
 plugins: [
         new SimpleStats(),
         ...
-    ],
+],
 ```
 
 ### Options
