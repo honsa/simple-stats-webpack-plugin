@@ -1,7 +1,9 @@
 # Simple stats for the actual webpack version (^4.41.5)
 ## Set the errors and warning to a minimum of output for maximum of information
 
-This plugin is just in alpha state, so please do not use it in your production environment.
+This a simple webpack plugin and it is just in alpha state, 
+so please do not use it in your production environment.
+
 The goal is to reduce the output of warnings and error messages in a performant 
 way and produce better and clearer error messages than webpack self with stats option 
 "errors-warnings".
