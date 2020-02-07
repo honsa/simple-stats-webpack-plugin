@@ -1,7 +1,8 @@
 /**
- * Reduce the webpack stats output
+ * Reduce the webpack stats output in a lean way
  * @see https://webpack.js.org/configuration/stats/
  * @author Jan Straka
+ * @mail straka@8038.ch
  * @licence MIT
  *
  */
