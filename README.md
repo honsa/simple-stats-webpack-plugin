@@ -10,7 +10,7 @@ with stats option "errors-warnings" or any other.
 
 https://webpack.js.org/configuration/stats/
 
-##Install
+### Install
 ```npm
 $ npm i --save-dev simple-stats-webpack-plugin
 ```
@@ -19,7 +19,7 @@ or
 $ yarn add --dev simple-stats-webpack-plugin
 ```
 
-##Use
+### Use
 
 ```js
 const SimpleStats = require('simple-stats-webpack-plugin');
@@ -31,7 +31,8 @@ plugins: [
         ...
     ],
 ```
-###Options:
+
+### Options
     id : string (default: 'simplemessages') 
     showWarnings: boolean (default: true)
     showErrors: boolean (default: true)
