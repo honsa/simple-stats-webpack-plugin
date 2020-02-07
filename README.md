@@ -29,7 +29,7 @@ plugins: [
         ...
     ],
 ```
- ###Options:
+###Options:
     id : string (default: 'simplemessages') 
     showWarnings: boolean (default: true)
     showErrors: boolean (default: true)
