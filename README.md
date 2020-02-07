@@ -1,5 +1,5 @@
 # Simple stats for the actual webpack version (^4.41.5)
-## Set the errors and warning to a minimum of output for maximum of information
+## Set the errors and warnings to a minimum of output for maximum of information
 
 This a simple webpack plugin and it is just in alpha state, 
 so please do not use it in your production environment.
