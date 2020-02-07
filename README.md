@@ -7,6 +7,17 @@ way and produce better and clearer error messages than webpack self with stats o
 "errors-warnings".
 https://webpack.js.org/configuration/stats/
 
+###Use
+```js
+const SimpleStats = require('simple-stats-webpack-plugin');
+```
+
+```js
+plugins: [
+        new SimpleStats(),
+        ...
+    ],
+```
  ###Options:
     id : string (default: 'simplemessages') 
     showWarnings: boolean (default: true)
