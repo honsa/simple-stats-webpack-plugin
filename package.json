@@ -2,7 +2,7 @@
   "name": "simple-stats-webpack-plugin",
   "version": "1.0.12",
   "description": "Simple plugin to reduce the output of webpack to a minimum and maximum of information",
-  "main": "simple-stats-webpack-plugin.js",
+  "main": "src/simple-stats-webpack-plugin.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
