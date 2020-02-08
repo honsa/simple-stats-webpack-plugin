@@ -30,18 +30,24 @@ class SimpleMessages {
         compiler.hooks.done.tap(this.name, (compilation) => {
             if (this.options.showWarnings) {
                 for (let i in compilation.compilation.warnings) {
-                    let msg = warningOutput(compilation.compilation.warnings[i]);
-                    if (msg) {
-                        console.warn(colors['FgYellow'], msg, colors['Reset']);
+                    let input = compilation.compilation.warnings[i];
+                    if(input){
+                        let msg = warningOutput(input);
+                        if (msg) {
+                            console.warn(colors['FgYellow'], msg, colors['Reset']);
+                        }
                     }
                 }
             }
 
             if (this.options.showErrors) {
                 for (let i in compilation.compilation.errors) {
-                    let msg = errorOutput(compilation.compilation.errors[i]);
-                    if (msg) {
-                        console.error(colors['FgRed'], msg, colors['Reset']);
+                    let input = compilation.compilation.errors[i];
+                    if(input){
+                        let msg = errorOutput(input);
+                        if (msg) {
+                            console.error(colors['FgRed'], msg, colors['Reset']);
+                        }
                     }
                 }
             }
@@ -137,7 +143,7 @@ function errorOutput(error) {
 function warningOutput(warnings) {
     if (warnings.message) {
         return warnings.message;
-    } else if (warnings.warning) {
+    } else if (warnings.warning && warnings.warning.message) {
         return warnings.warning.message;
     }
 }
