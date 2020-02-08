@@ -14,7 +14,7 @@ otherwise you may have duplicated errors or warnings in your output.
 https://webpack.js.org/configuration/stats/
 
 Please share webpack config and full information around 
-your warnings or error which are not recognized, 
+your warnings or errors which are not recognized, 
 this will help for further investigations.
 
 ## Install
