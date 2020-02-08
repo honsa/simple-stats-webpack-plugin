@@ -5,7 +5,7 @@ This is a simple webpack plugin and it is just in alpha state,
 so please do not use it in your production environment.
 
 The goal is to reduce the output of warning and error messages in a performant 
-way and produce better and clearer error and warning messages than webpack himself 
+way and produce better and clearer error and warning messages, than webpack himself, 
 with stats option "errors-warnings" or any other.
 
 https://webpack.js.org/configuration/stats/
@@ -31,7 +31,7 @@ plugins: [
         ...
 ],
 ```
-### Options:
+### Options
     id : string (default: 'simplemessages') 
     showWarnings: boolean (default: true)
     showErrors: boolean (default: true)
