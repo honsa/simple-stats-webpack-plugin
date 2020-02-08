@@ -9,8 +9,6 @@
 class SimpleMessages {
     /**
      * @param options
-     * @param options.showErrors
-     * @param options.showWanings
      */
     constructor(options) {
         this.id = options && options.id ? options.id : 'simplemessages';
@@ -60,7 +58,7 @@ class SimpleMessages {
 module.exports = SimpleMessages;
 
 /**
- *
+ * @see https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
  * @type {{
  * FgYellow: string,
  * BgGreen: string,
