@@ -8,6 +8,9 @@ The goal is to reduce the output of warning and error messages in a performant
 way and produce better and clearer error and warning messages, than webpack himself, 
 with stats option "errors-warnings" or any other.
 
+Set stats to `none` if you use this plugin, 
+otherwise you may have duplicated errors or warnings in your output.
+
 https://webpack.js.org/configuration/stats/
 
 ## Install
