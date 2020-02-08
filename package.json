@@ -1,6 +1,6 @@
 {
   "name": "simple-stats-webpack-plugin",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Simple plugin to reduce the output of webpack to a minimum and maximum of information",
   "main": "src/simple-stats-webpack-plugin.js",
   "scripts": {
