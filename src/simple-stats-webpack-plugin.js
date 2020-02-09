@@ -75,6 +75,9 @@ class SimpleMessages {
     }
 }
 
+/**
+ * @type {SimpleMessages}
+ */
 module.exports = SimpleMessages;
 
 /**
