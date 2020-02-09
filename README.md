@@ -43,3 +43,4 @@ plugins: [
     showWarnings: boolean (default: true)
     showErrors: boolean (default: true)
     showTime: boolean (default: true)
+    clearConsole: boolean (default: true)
