@@ -39,8 +39,16 @@ plugins: [
 ],
 ```
 ### Options
-    id : string (default: 'simplemessages') 
-    showWarnings: boolean (default: true)
-    showErrors: boolean (default: true)
-    showTime: boolean (default: true)
-    clearConsole: boolean (default: true)
+
+```javascript
+plugins: [
+        new SimpleStatsWebpackPlugin({
+           id : 'simplemessages', 
+           showWarnings: true,
+           showErrors: true,
+           showTime: true,
+           clearConsole: true
+        }),
+        ...
+],
+```
