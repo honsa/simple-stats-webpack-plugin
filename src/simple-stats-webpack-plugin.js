@@ -30,17 +30,17 @@ class SimpleMessages {
     apply(compiler) {
         compiler.hooks.done.tap(this.name, (compilation) => {
 
-            if(this.options.clearConsole){
-               console.clear();
+            if (this.options.clearConsole) {
+                console.clear();
             }
 
             if (this.options.showWarnings) {
                 for (let i in compilation.compilation.warnings) {
                     let input = compilation.compilation.warnings[i];
-                    if(input){
+                    if (input) {
                         let msg = warningOutput(input);
                         if (msg) {
-                            console.warn(colors['FgYellow'], msg, colors['Reset']);
+                            console.warn(colors['FgYellow'] + msg.trim() + colors['Reset']);
                         }
                     }
                 }
@@ -49,10 +49,10 @@ class SimpleMessages {
             if (this.options.showErrors) {
                 for (let i in compilation.compilation.errors) {
                     let input = compilation.compilation.errors[i];
-                    if(input){
+                    if (input) {
                         let msg = errorOutput(input);
                         if (msg) {
-                            console.error(colors['FgRed'], msg, colors['Reset']);
+                            console.error(colors['FgRed'] + msg.trim() + colors['Reset']);
                         }
                     }
                 }
@@ -132,7 +132,7 @@ const colors = {
 function errorOutput(error) {
     if (error.error && error.error.formatted) {
         return error.error.formatted;
-    }else if (error.error && error.error.message) {
+    } else if (error.error && error.error.message) {
         return error.error.message;
     } else if (error.error && error.error.error && error.error.error.formatted) {
         return error.error.error.formatted;
