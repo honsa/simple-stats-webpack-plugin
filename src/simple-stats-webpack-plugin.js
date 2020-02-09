@@ -37,7 +37,7 @@ class SimpleMessages {
             if (this.options.showWarnings) {
                 if(0 < compilation.compilation.warnings.length) {
                     let warningsLengthLength = parseInt(compilation.compilation.warnings.length);
-                    console.warn(colors['FgYellow'] + (warningsLength > 1 ? warningsLength + ' WARNINGS' : warningsLength +  ' WARNING' ) + colors['Reset']);
+                    console.warn(colors['BgYellow'] + colors['FgBlack'] + (warningsLength > 1 ? warningsLength + ' WARNINGS' : warningsLength +  ' WARNING' ) + colors['Reset']);
                     for (let i in compilation.compilation.warnings) {
                         let input = compilation.compilation.warnings[i];
                         if (input) {
@@ -53,7 +53,7 @@ class SimpleMessages {
             if (this.options.showErrors) {
                 if(0 < compilation.compilation.errors.length){
                     let errorsLength = parseInt(compilation.compilation.errors.length);
-                    console.error(colors['FgRed'] + (errorsLength > 1 ? errorsLength + ' ERRORS' : errorsLength +  ' ERROR' ) + colors['Reset']);
+                    console.error(colors['BgRed'] +colors['FgBlack'] + (errorsLength > 1 ? errorsLength + ' ERRORS' : errorsLength +  ' ERROR' ) + colors['Reset']);
                     for (let i in compilation.compilation.errors) {
                         let input = compilation.compilation.errors[i];
                         if (input) {
@@ -75,9 +75,6 @@ class SimpleMessages {
     }
 }
 
-/**
- * @type {SimpleMessages}
- */
 module.exports = SimpleMessages;
 
 /**
