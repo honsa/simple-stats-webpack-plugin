@@ -1,7 +1,7 @@
 /**
  * Reduce the webpack stats output in a lean way
  * @see https://webpack.js.org/configuration/stats/
- * @author Jan Straka
+ * @author honsa
  * @mail straka@8038.ch
  * @licence MIT
  *
@@ -35,24 +35,32 @@ class SimpleMessages {
             }
 
             if (this.options.showWarnings) {
-                for (let i in compilation.compilation.warnings) {
-                    let input = compilation.compilation.warnings[i];
-                    if (input) {
-                        let msg = warningOutput(input);
-                        if (msg) {
-                            console.warn(colors['FgYellow'] + msg.trim() + colors['Reset']);
+                if(0 < compilation.compilation.warnings.length) {
+                    let warningsLengthLength = parseInt(compilation.compilation.warnings.length);
+                    console.warn(colors['FgYellow'] + (warningsLength > 1 ? warningsLength + ' WARNINGS' : warningsLength +  ' WARNING' ) + colors['Reset']);
+                    for (let i in compilation.compilation.warnings) {
+                        let input = compilation.compilation.warnings[i];
+                        if (input) {
+                            let msg = warningOutput(input);
+                            if (msg) {
+                                console.warn(colors['FgYellow'] + msg.trim() + colors['Reset']);
+                            }
                         }
                     }
                 }
             }
 
             if (this.options.showErrors) {
-                for (let i in compilation.compilation.errors) {
-                    let input = compilation.compilation.errors[i];
-                    if (input) {
-                        let msg = errorOutput(input);
-                        if (msg) {
-                            console.error(colors['FgRed'] + msg.trim() + colors['Reset']);
+                if(0 < compilation.compilation.errors.length){
+                    let errorsLength = parseInt(compilation.compilation.errors.length);
+                    console.error(colors['FgRed'] + (errorsLength > 1 ? errorsLength + ' ERRORS' : errorsLength +  ' ERROR' ) + colors['Reset']);
+                    for (let i in compilation.compilation.errors) {
+                        let input = compilation.compilation.errors[i];
+                        if (input) {
+                            let msg = errorOutput(input);
+                            if (msg) {
+                                console.error(colors['FgRed'] + msg.trim() + colors['Reset']);
+                            }
                         }
                     }
                 }
