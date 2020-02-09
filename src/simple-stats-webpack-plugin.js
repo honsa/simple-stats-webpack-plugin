@@ -18,6 +18,7 @@ class SimpleMessages {
         this.options['showWarnings'] = options && options.showWarnings ? options.showWarnings : true;
         this.options['showErrors'] = options && options.showErrors ? options.showErrors : true;
         this.options['showTime'] = options && options.showTime ? options.showTime : true;
+        this.options['clearConsole'] = options && options.clearConsole ? options.clearConsole : true;
     }
 
     /**
@@ -28,6 +29,11 @@ class SimpleMessages {
      */
     apply(compiler) {
         compiler.hooks.done.tap(this.name, (compilation) => {
+
+            if(this.options.clearConsole){
+               console.clear();
+            }
+
             if (this.options.showWarnings) {
                 for (let i in compilation.compilation.warnings) {
                     let input = compilation.compilation.warnings[i];
