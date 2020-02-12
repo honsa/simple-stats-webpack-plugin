@@ -144,7 +144,7 @@ function errorOutput(error) {
         return error.error.message;
     } else if (error.error && error.error.error && error.error.error.formatted) {
         return error.error.error.formatted;
-    } else if (error.message && error.module.resource && error.module.resource) {
+    } else if (error.message && error.module && error.module.resource) {
         return error.module.resource + "\n" + error.message;
     }
 }
