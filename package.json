@@ -15,7 +15,10 @@
     "warnings",
     "errors",
     "warning",
-    "error"
+    "error",
+    "preprocess",
+    "build",
+    "bundle"
   ],
   "author": {
     "name": "Jan Straka",
