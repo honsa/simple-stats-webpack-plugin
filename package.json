@@ -13,7 +13,9 @@
     "stats",
     "messages",
     "warnings",
-    "errors"
+    "errors",
+    "warning",
+    "error"
   ],
   "author": {
     "name": "Jan Straka",
