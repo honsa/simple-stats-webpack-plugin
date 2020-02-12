@@ -17,6 +17,8 @@ Please share webpack config and full information around
 your warnings or errors which are not recognized, 
 this will help for further investigations.
 
+And by the way, the package has no internal dependencies.
+
 ## Install
 ```npm
 $ npm i --save-dev simple-stats-webpack-plugin
