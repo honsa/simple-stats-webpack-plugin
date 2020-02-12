@@ -140,12 +140,12 @@ const colors = {
 function errorOutput(error) {
     if (error.error && error.error.formatted) {
         return error.error.formatted;
+    } else if (error.message && error.module && error.module.resource) {
+        return error.module.resource + "\n" + error.message;
     } else if (error.error && error.error.message) {
         return error.error.message;
     } else if (error.error && error.error.error && error.error.error.formatted) {
         return error.error.error.formatted;
-    } else if (error.message && error.module && error.module.resource) {
-        return error.module.resource + "\n" + error.message;
     }
 }
 
