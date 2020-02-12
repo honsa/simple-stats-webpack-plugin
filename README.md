@@ -34,8 +34,7 @@ const SimpleStatsWebpackPlugin = require('simple-stats-webpack-plugin');
 
 ```js
 plugins: [
-        new SimpleStatsWebpackPlugin(),
-        ...
+        new SimpleStatsWebpackPlugin()
 ],
 ```
 ### Options
@@ -43,12 +42,11 @@ plugins: [
 ```javascript
 plugins: [
         new SimpleStatsWebpackPlugin({
-           id : 'simplemessages', 
+           id : 'simpleStatsWebpackPlugin', 
            showWarnings: true,
            showErrors: true,
            showTime: true,
            clearConsole: true
-        }),
-        ...
+        })
 ],
 ```
