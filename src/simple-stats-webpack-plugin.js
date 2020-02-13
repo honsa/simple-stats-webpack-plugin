@@ -19,6 +19,7 @@ class SimpleMessages {
         this.options['showErrors'] = options && options.showErrors ? options.showErrors : true;
         this.options['showTime'] = options && options.showTime ? options.showTime : true;
         this.options['clearConsole'] = options && options.clearConsole ? options.clearConsole : true;
+        this.options['showHash'] = options && options.showHash ? options.showHash : true;
     }
 
     /**
@@ -69,7 +70,8 @@ class SimpleMessages {
             if (this.options['showTime']) {
                 let time = new Date().toLocaleTimeString();
                 let duration = compilation.endTime - compilation.startTime;
-                console.log(time + ' - compiled in ' + duration + 'ms - with hash: ' + compilation.hash);
+                let hash = this.options['showHash'] ? ' - with hash: ' + compilation.hash : '';
+                console.log(time + ' - compiled in ' + duration + 'ms' + hash);
             }
         });
     }
