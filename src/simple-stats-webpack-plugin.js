@@ -11,15 +11,15 @@ class SimpleMessages {
      * @param options
      */
     constructor(options) {
-        this.id = typeof options.id !== 'undefined'? options.id : 'simplemessages';
+        this.id = options && typeof options.id !== 'undefined'? options.id : 'simplemessages';
         this.name = 'SimpleMessages';
         this.options = options ? options : {};
 
-        this.options['showWarnings'] = typeof options.showWarnings !== 'undefined' ? options.showWarnings : true;
-        this.options['showErrors'] = typeof options.showWarnings !== 'undefined' ? options.showErrors : true;
-        this.options['showTime'] = typeof options.showTime ? options.showTime !== 'undefined' : true;
-        this.options['clearConsole'] = typeof options.clearConsole !== 'undefined' ? options.clearConsole : true;
-        this.options['showHash'] = typeof options.showHash !== 'undefined' ? options.showHash : true;
+        this.options['showWarnings'] = options && typeof options.showWarnings !== 'undefined' ? options.showWarnings : true;
+        this.options['showErrors'] = options && typeof options.showWarnings !== 'undefined' ? options.showErrors : true;
+        this.options['showTime'] = options && typeof options.showTime ? options.showTime !== 'undefined' : true;
+        this.options['clearConsole'] = options && typeof options.clearConsole !== 'undefined' ? options.clearConsole : true;
+        this.options['showHash'] = options && typeof options.showHash !== 'undefined' ? options.showHash : true;
     }
 
     /**
