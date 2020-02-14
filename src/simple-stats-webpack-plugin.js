@@ -17,7 +17,7 @@ class SimpleMessages {
 
         this.options['showWarnings'] = options && typeof options.showWarnings !== 'undefined' ? options.showWarnings : true;
         this.options['showErrors'] = options && typeof options.showWarnings !== 'undefined' ? options.showErrors : true;
-        this.options['showTime'] = options && typeof options.showTime ? options.showTime !== 'undefined' : true;
+        this.options['showTime'] = options && typeof options.showTime !== 'undefined' ? options.showTime : true;
         this.options['clearConsole'] = options && typeof options.clearConsole !== 'undefined' ? options.clearConsole : true;
         this.options['showHash'] = options && typeof options.showHash !== 'undefined' ? options.showHash : true;
     }
