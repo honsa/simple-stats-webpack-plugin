@@ -11,7 +11,7 @@ class SimpleMessages {
      * @param options
      */
     constructor(options) {
-        this.id = options && typeof options.id !== 'undefined'? options.id : 'simplemessages';
+        this.id = options && typeof options.id !== 'undefined' ? options.id : 'simplemessages';
         this.name = 'SimpleMessages';
         this.options = options ? options : {};
 

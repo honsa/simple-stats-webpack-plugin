@@ -48,7 +48,8 @@ plugins: [
            showWarnings: true,
            showErrors: true,
            showTime: true,
-           clearConsole: true
+           clearConsole: true,
+           showHash: true
         })
 ],
 ```
