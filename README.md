@@ -44,7 +44,7 @@ plugins: [
 ```javascript
 plugins: [
         new SimpleStatsWebpackPlugin({
-           id : 'simpleStatsWebpackPlugin', 
+           id : 'SimpleStatsWebpackPlugin', 
            showWarnings: true,
            showErrors: true,
            showTime: true,
