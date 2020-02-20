@@ -49,7 +49,8 @@ plugins: [
            showErrors: true,
            showTime: true,
            clearConsole: true,
-           showHash: true
+           showHash: true,
+           showRun: true
         })
 ],
 ```

@@ -37,26 +37,9 @@ class SimpleMessages {
      */
     apply(compiler) {
 
-        compiler.hooks.watchRun.tap(this.name, (context, entry) => {
-            if (this.options.showRun) {
-                let time = new Date().toLocaleTimeString();
-                console.clear();
-                console.log(time + ' - start run...');
-
-                this.loading = (function () {
-                    let chars = ['.', 'o','O', 'o'];
-                    let i = 0;
-
-                    return setInterval(() => {
-                        i = (i > 3) ? 0 : i;
-                        console.clear();
-                        console.log(chars[i]);
-                        i++;
-                    }, 300);
-                })();
-            }
-        });
-
+        /**
+         * Hook in after compilation and look for errors
+         */
         compiler.hooks.done.tap(this.name, (compilation) => {
 
             if (this.loading) {
@@ -104,6 +87,29 @@ class SimpleMessages {
                 let duration = compilation.endTime - compilation.startTime;
                 let hash = this.options['showHash'] ? ' - with hash: ' + compilation.hash : '';
                 console.log(time + ' - compiled in ' + duration + 'ms' + hash);
+            }
+        });
+
+        /**
+         * Hook into watch runs and show loading animation
+         */
+        compiler.hooks.watchRun.tap(this.name, (context, entry) => {
+            if (this.options.showRun) {
+                let time = new Date().toLocaleTimeString();
+                console.clear();
+                console.log(time + ' - start run...');
+
+                this.loading = (function () {
+                    let chars = ['.', 'o','O', 'o'];
+                    let i = 0;
+
+                    return setInterval(() => {
+                        i = (i > 3) ? 0 : i;
+                        console.clear();
+                        console.log(chars[i]);
+                        i++;
+                    }, 300);
+                })();
             }
         });
     }
