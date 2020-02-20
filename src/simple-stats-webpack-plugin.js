@@ -7,6 +7,10 @@
  *
  */
 class SimpleMessages {
+    warnings;
+    compilation;
+    errors;
+
     /**
      * @param options
      */
@@ -20,6 +24,9 @@ class SimpleMessages {
         this.options['showTime'] = options && typeof options.showTime !== 'undefined' ? options.showTime : true;
         this.options['clearConsole'] = options && typeof options.clearConsole !== 'undefined' ? options.clearConsole : true;
         this.options['showHash'] = options && typeof options.showHash !== 'undefined' ? options.showHash : true;
+        this.options['showRun'] = options && typeof options.showRun !== 'undefined' ? options.showRun : true;
+
+        this.loading = false;
     }
 
     /**
@@ -29,7 +36,32 @@ class SimpleMessages {
      * @param compiler
      */
     apply(compiler) {
+
+        compiler.hooks.watchRun.tap(this.name, (context, entry) => {
+            if (this.options.showRun) {
+                let time = new Date().toLocaleTimeString();
+                console.clear();
+                console.log(time + ' - start run...');
+
+                this.loading = (function () {
+                    let chars = ['.', 'o','O', 'o'];
+                    let i = 0;
+
+                    return setInterval(() => {
+                        i = (i > 3) ? 0 : i;
+                        console.clear();
+                        console.log(chars[i]);
+                        i++;
+                    }, 300);
+                })();
+            }
+        });
+
         compiler.hooks.done.tap(this.name, (compilation) => {
+
+            if (this.loading) {
+                clearInterval(this.loading);
+            }
 
             if (this.options.clearConsole) {
                 console.clear();
@@ -75,6 +107,7 @@ class SimpleMessages {
             }
         });
     }
+
 }
 
 module.exports = SimpleMessages;
