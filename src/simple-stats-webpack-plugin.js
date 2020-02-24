@@ -7,10 +7,6 @@
  *
  */
 class SimpleMessages {
-    warnings;
-    compilation;
-    errors;
-
     /**
      * @param options
      */
@@ -20,7 +16,7 @@ class SimpleMessages {
         this.options = options ? options : {};
 
         this.options['showWarnings'] = options && typeof options.showWarnings !== 'undefined' ? options.showWarnings : true;
-        this.options['showErrors'] = options && typeof options.showWarnings !== 'undefined' ? options.showErrors : true;
+        this.options['showErrors'] = options && typeof options.showErrors !== 'undefined' ? options.showErrors : true;
         this.options['showTime'] = options && typeof options.showTime !== 'undefined' ? options.showTime : true;
         this.options['clearConsole'] = options && typeof options.clearConsole !== 'undefined' ? options.clearConsole : true;
         this.options['showHash'] = options && typeof options.showHash !== 'undefined' ? options.showHash : true;
@@ -66,6 +62,7 @@ class SimpleMessages {
                 }
             }
 
+            let test = compilation.compilation.errors.length;
             if (this.options.showErrors) {
                 if (0 < compilation.compilation.errors.length) {
                     let errorsLength = parseInt(compilation.compilation.errors.length);
@@ -100,13 +97,26 @@ class SimpleMessages {
                 console.log(time + ' - start run...');
 
                 this.loading = (function () {
-                    let chars = ['.', 'o','O', 'o'];
+                    let chars = ['o', 'O', 'o'];
                     let i = 0;
 
                     return setInterval(() => {
-                        i = (i > 3) ? 0 : i;
+                        i = (i > 2) ? 0 : i;
+
+                        let i2 = i + 1;
+                        if (i2 > 2) {
+                            i2 = 0;
+                        }
+
+                        let i3 = i + 2;
+                        if (i3 > 2 && i2 === 0) {
+                            i3 = 1;
+                        } else if (i3 > 2) {
+                            i3 = 0
+                        }
+
                         console.clear();
-                        console.log(chars[i]);
+                        console.log(new Date().toLocaleTimeString() + ' - ' + chars[i] + chars[i2] + chars[i3]);
                         i++;
                     }, 300);
                 })();
