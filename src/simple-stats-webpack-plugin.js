@@ -43,7 +43,7 @@ class SimpleMessages {
             }
 
             if (this.options.clearConsole) {
-                console.clear();
+                clearConsole();
             }
 
             if (this.options.showWarnings) {
@@ -62,7 +62,6 @@ class SimpleMessages {
                 }
             }
 
-            let test = compilation.compilation.errors.length;
             if (this.options.showErrors) {
                 if (0 < compilation.compilation.errors.length) {
                     let errorsLength = parseInt(compilation.compilation.errors.length);
@@ -93,7 +92,7 @@ class SimpleMessages {
         compiler.hooks.watchRun.tap(this.name, (context, entry) => {
             if (this.options.showRun) {
                 let time = new Date().toLocaleTimeString();
-                console.clear();
+                clearConsole();
                 console.log(time + ' - start run...');
 
                 this.loading = (function () {
@@ -115,7 +114,7 @@ class SimpleMessages {
                             i3 = 0
                         }
 
-                        console.clear();
+                        clearConsole();
                         console.log(new Date().toLocaleTimeString() + ' - ' + chars[i] + chars[i2] + chars[i3]);
                         i++;
                     }, 300);
@@ -210,5 +209,15 @@ function warningOutput(warnings) {
         return warnings.message;
     } else if (warnings.warning && warnings.warning.message) {
         return warnings.warning.message;
+    }
+}
+
+/**
+ * https://stackoverflow.com/a/9452971/9015191
+ */
+function clearConsole() {
+    let lines = process.stdout.getWindowSize()[1];
+    for(var i = 0; i < lines; i++) {
+        console.log('\r\n');
     }
 }
