@@ -217,7 +217,8 @@ function warningOutput(warnings) {
  */
 function clearConsole() {
     let lines = process.stdout.getWindowSize()[1];
-    for(var i = 0; i < lines; i++) {
+    for(let i = 0; i < lines; i++) {
         console.log('\r\n');
     }
+    console.clear();
 }
