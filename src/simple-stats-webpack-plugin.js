@@ -216,9 +216,12 @@ function warningOutput(warnings) {
  * https://stackoverflow.com/a/9452971/9015191
  */
 function clearConsole() {
-    let lines = process.stdout.getWindowSize()[1];
-    for(let i = 0; i < lines; i++) {
-        console.log('\r\n');
+    if(process.stdout.getWindowSiz){
+        let lines = process.stdout.getWindowSize()[1];
+        for(let i = 0; i < lines; i++) {
+            console.log('\r\n');
+        }
     }
+
     console.clear();
 }
