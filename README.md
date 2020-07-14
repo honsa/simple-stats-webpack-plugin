@@ -1,4 +1,4 @@
-# Simple stats for the actual webpack version (v4.42.1)
+# Simple stats for the actual webpack version (v4.42.1 - v4.43.0)
 ## Set the errors and warnings to a minimum of output for maximum of information
 
 This is a simple webpack plugin and it is just in alpha state, 
