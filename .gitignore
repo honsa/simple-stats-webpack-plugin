@@ -72,3 +72,5 @@ fabric.properties
 .idea/caches/build_file_checksums.ser
 node_modules/**
 .idea/**
+webpack.conf.js
+dist/**
