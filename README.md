@@ -50,7 +50,8 @@ plugins: [
            showTime: true,
            clearConsole: true,
            showHash: true,
-           showRun: true
+           showRun: true,
+           showActivity: true
         })
 ],
 ```

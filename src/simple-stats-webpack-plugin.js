@@ -39,7 +39,7 @@ class SimpleMessages {
          */
         compiler.hooks.done.tap(this.name, (compilation) => {
 
-            if (this.showActivity && this.loading) {
+            if (this.options.showActivity && this.loading) {
                 clearInterval(this.loading);
             }
 
@@ -91,7 +91,7 @@ class SimpleMessages {
          * Hook into watch runs and show loading animation
          */
         compiler.hooks.watchRun.tap(this.name, (context, entry) => {
-            if (this.showActivity && this.options.showRun) {
+            if (this.options.showActivity && this.options.showRun) {
                 let time = new Date().toLocaleTimeString();
                 clearConsole();
                 console.log(time + ' - start run...');
