@@ -43,7 +43,7 @@ class SimpleMessages {
                 clearInterval(this.loading);
             }
 
-            if (this.options.clearConsole) {
+            if (this.options.showActivity && this.options.clearConsole) {
                 clearConsole();
             }
 
@@ -79,7 +79,7 @@ class SimpleMessages {
                 }
             }
 
-            if (this.options['showTime']) {
+            if (this.options.showActivity && this.options['showTime']) {
                 let time = new Date().toLocaleTimeString();
                 let duration = compilation.endTime - compilation.startTime;
                 let hash = this.options['showHash'] ? ' - with hash: ' + compilation.hash : '';
