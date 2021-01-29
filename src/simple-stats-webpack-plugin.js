@@ -21,6 +21,7 @@ class SimpleMessages {
         this.options['clearConsole'] = options && typeof options.clearConsole !== 'undefined' ? options.clearConsole : true;
         this.options['showHash'] = options && typeof options.showHash !== 'undefined' ? options.showHash : true;
         this.options['showRun'] = options && typeof options.showRun !== 'undefined' ? options.showRun : true;
+        this.options['showActivity'] = options && typeof options.showActivity !== 'undefined' ? options.showActivity : true;
 
         this.loading = false;
     }
@@ -38,7 +39,7 @@ class SimpleMessages {
          */
         compiler.hooks.done.tap(this.name, (compilation) => {
 
-            if (this.loading) {
+            if (this.showActivity && this.loading) {
                 clearInterval(this.loading);
             }
 
@@ -90,7 +91,7 @@ class SimpleMessages {
          * Hook into watch runs and show loading animation
          */
         compiler.hooks.watchRun.tap(this.name, (context, entry) => {
-            if (this.options.showRun) {
+            if (this.showActivity && this.options.showRun) {
                 let time = new Date().toLocaleTimeString();
                 clearConsole();
                 console.log(time + ' - start run...');
